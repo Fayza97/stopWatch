@@ -1,20 +1,46 @@
 <html>
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <style>
+         .stopwatch {
+            text-align: center;
+            margin: 240px 500px;
+            padding: 20px;
+            border: 2apx solid skyblue;
+            background: turquoise;
+            border-radius: 30px;
+            box-shadow: 10px 10px rgb(153, 153, 153);
+         }
+         .time {
+          padding: 20px;
+         }
+         .toggle,.reset {
+             width: 100px;
+         }
+         </style>
     </head>
     <body>
-        <div id="app"></div>
-
+        <div class="stopwatch" data-autostart="false">
+                <div class="time">
+                    <span class="hours"></span> : 
+                    <span class="minutes"></span> : 
+                    <span class="seconds"></span> :
+                    <span class="milliseconds"></span>
+                </div>
+                <div class="controls">
+                    <button class="toggle btn btn-primary" data-pausetext="Pause" data-resumetext="Resume">Start</button>
+                    <button class="reset btn btn-warning">Reset</button>
+                </div>
+            </div>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="./script.js"></script>
         <script>
-            /*const renderer = new Renderer(
-                new Counter,
-                document.getElementById('app')
-            );*/
-
-
+            const renderer = new Renderer(
+                new stopWatch,
+                document.getElementsByClassName('stopwatch')
+            );
         </script>
     </body>
-
 </html>
